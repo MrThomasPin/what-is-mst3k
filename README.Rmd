@@ -1,0 +1,58 @@
+---
+title: "README"
+author: "Thomas Pin"
+date: "17/02/2020"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(knitr)
+library(tidyverse)
+```
+
+```{r readfile, include=FALSE}
+
+mst3k_movies <- read_csv("table/mst3k_movies.csv", col_names = c("Index", "Movie", "Year", "IMDb Rating"), skip = 1)
+
+negative_words <- read_csv("table/negative_words.csv", col_names = c("Index", "Word", "Weight"), skip = 1)
+
+negative_ngrams2 <- read_csv("table/negative_ngrams2.csv", col_names = c("Index", "Word", "Weight"), skip = 1)
+
+negative_words <- negative_words %>% 
+  select(-Index)
+
+mst3k_movies <- mst3k_movies %>% 
+  select(-Index)
+
+negative_ngrams2 <- negative_ngrams2 %>% 
+  select(-Index)
+
+```
+
+# Artical Links 
+
+
+## Words that relate to negative reviews 
+
+The following is a list of words that are strongly correlated with negative movie reviews on IMDb 
+
+```{r negative words}
+kable(negative_words)
+```
+
+## MST3K movies 
+
+The following movies were mentioned in reviews that contained MST3K. 
+
+```{r mst3k}
+kable(mst3k_movies)
+```
+
+## N-grams words that relate to negative reviews
+
+The following is a list of words that are strongly correlated with negative movie reviews on IMDb
+
+```{r ngrams2}
+kable(negative_ngrams2)
+```
