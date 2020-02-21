@@ -19,6 +19,8 @@ negative_words <- read_csv("table/negative_words.csv", col_names = c("Index", "W
 
 negative_ngrams2 <- read_csv("table/negative_ngrams2.csv", col_names = c("Index", "Word", "Weight"), skip = 1)
 
+negative_tw <- read_csv("table/negative_tw.csv", col_names = c("Index", "Word", "Weight"), skip = 1)
+
 negative_words <- negative_words %>% 
   select(-Index)
 
@@ -26,6 +28,9 @@ mst3k_movies <- mst3k_movies %>%
   select(-Index)
 
 negative_ngrams2 <- negative_ngrams2 %>% 
+  select(-Index)
+
+negative_tw <- negative_tw %>% 
   select(-Index)
 
 ```
@@ -55,4 +60,12 @@ The following is a list of words that are strongly correlated with negative movi
 
 ```{r ngrams2}
 kable(negative_ngrams2)
+```
+
+## tf-idf words that relate to negative reviews
+
+The following is a list of words that are strongly correlated with negative movie reviews on IMDb
+
+```{r tf idf}
+kable(negative_tw)
 ```

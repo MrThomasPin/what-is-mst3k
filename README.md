@@ -55,3 +55,21 @@ negative movie reviews on IMDb
 | worst movie        | \-2.472386 |
 | just awful         | \-2.407856 |
 | poor script        | \-2.312758 |
+
+## tf-idf words that relate to negative reviews
+
+The following is a list of words that are strongly correlated with
+negative movie reviews on IMDb
+
+| Word           |      Weight |
+| :------------- | ----------: |
+| worst          | \-10.078105 |
+| waste          |  \-8.198400 |
+| awful          |  \-7.756072 |
+| bad            |  \-7.142596 |
+| boring         |  \-6.196003 |
+| poor           |  \-6.027923 |
+| terrible       |  \-5.972775 |
+| worse          |  \-5.299217 |
+| disappointment |  \-5.183257 |
+| horrible       |  \-5.141605 |
